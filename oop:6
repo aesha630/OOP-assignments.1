@@ -1,1 +1,30 @@
 
+#include<iostream>
+using namespace std;
+class Employee
+{
+private:
+int emp_id;
+string name;
+public:
+Employee(int id,string n)
+{
+emp_id=id;
+name=n;
+cout<<"Employee record created for"<<name<<endl;
+}
+void display()
+{
+cout<<"Employee id:"<<emp_id<<endl;
+cout<<"Employee name:"<<name<<endl;
+}
+~Employee(){
+cout<<"Employee record remnoved for"<<name<<endl;
+}
+};
+int main()
+{
+Employee emp(101,"Aesha");
+emp.display();
+return 0;
+}
