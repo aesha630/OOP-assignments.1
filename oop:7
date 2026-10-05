@@ -1,1 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
 
+class person
+{
+protected:
+    string name;
+    int age;
+    string Contact;
+
+public:
+    person(string n, int a, string c)
+    {
+        name = n;
+        age = a;
+        Contact = c;   // Corrected
+    }
+};
+
+class Student : public person
+{
+private:
+    int rollNumber;
+    string branch;
+
+public:
+    Student(string n, int a, string c, int r, string b)
+        : person(n, a, c)
+    {
+        rollNumber = r;
+        branch = b;
+    }
+
+    void display()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Contact: " << Contact << endl;  // Corrected
+        cout << "Roll Number: " << rollNumber << endl;
+        cout << "Branch: " << branch << endl;
+    }
+};
+
+int main()
+{
+    Student S1("Aesha", 18, "8141436006", 53, "AI DS");
+    S1.display();
+
+    return 0;
+}
